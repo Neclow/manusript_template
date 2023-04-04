@@ -1,0 +1,42 @@
+%% select between bioRxiv style or submission style by commenting either line
+\documentclass[times, nohelvet]{bioRxiv}
+% \documentclass[submit]{bioRxiv}
+%\renewcommand\familydefault{\sfdefault}
+\usepackage{csquotes}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{lipsum}
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\usepackage{varwidth}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{nameref}
+%\usepackage{refcheck}
+% \captionsetup{skip=0.25\baselineskip}
+% \captionsetup[subfigure]{font={bf}, skip=1pt, singlelinecheck=false}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+% Toggle between draft mode & final copy: 
+\newtoggle{draft}
+% \toggletrue{draft} % draft mode
+\togglefalse{draft} % final-copy mode <=== comment this line if you want draft mode
+
+\usepackage[backend=biber, style=nature, sorting=none, intitle=true]{biblatex}
+% \DeclareLanguageMapping{english}{american-apa}
+% \renewcommand*{\bibfont}{\normalfont\small}
+
+% Semibold font
+\DeclareRobustCommand{\sbseries}{\fontseries{sb}\selectfont}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+
+\addbibresource{References.bib}
+
+\begin{document}
+\include{01_main}
+
+\onecolumn
+\include{Appendix}
+
+\end{document}
